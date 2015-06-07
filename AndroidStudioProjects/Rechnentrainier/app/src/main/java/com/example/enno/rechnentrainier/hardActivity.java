@@ -47,7 +47,7 @@ public class hardActivity extends ActionBarActivity {
         TextView result = (TextView) findViewById(R.id.result);
         int result_num = Integer.parseInt(result.getText().toString());
         if(result_num == task.getResult()) {
-            answer.setText("Your right!");
+            answer.setText("You're right!");
             generateNums();
         } else {
             answer.setText("Try again!");
