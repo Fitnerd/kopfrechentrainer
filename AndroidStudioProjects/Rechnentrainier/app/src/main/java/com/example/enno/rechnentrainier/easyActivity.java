@@ -25,7 +25,20 @@ public class easyActivity extends ActionBarActivity {
         TextView num2 = (TextView) findViewById(R.id.num2);
         num1.setText(Integer.toString(task.getOperand1()));
         num2.setText(Integer.toString(task.getOperand2()));
-        oper.setText(task.getOperator());
+        switch (task.getOperator()) {
+            case 0:
+                oper.setText("+");
+                break;
+            case 1:
+                oper.setText("-");
+                break;
+            case 2:
+                oper.setText("*");
+                break;
+            case 3:
+                oper.setText("/");
+                break;
+        }
     }
 
     public void checkResult(View view) {
