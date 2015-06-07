@@ -4,6 +4,8 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
 
 
 public class hardActivity extends ActionBarActivity {
@@ -12,6 +14,28 @@ public class hardActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hard);
+        generateNums();
+    }
+
+    public void generateNums() {
+        TextView num1 = (TextView) findViewById(R.id.num1);
+        TextView oper = (TextView) findViewById(R.id.operator);
+        TextView num2 = (TextView) findViewById(R.id.num2);
+        num1.setText(Integer.toString(Task.getOperant1));
+        num2.setText(Integer.toString(Task.getOperant2));
+        oper.setText(Task.getOperator);
+    }
+
+    public void checkResult(View view) {
+        TextView answer = (TextView) findViewById(R.id.anwser);
+        TextView result = (TextView) findViewById(R.id.result);
+        int result_num = Integer.parseInt(result.getText().toString());
+        if(result_num == Task.result) {
+            answer.setText("Your right!");
+            generateNums();
+        } else {
+            answer.setText("Try again!");
+        }
     }
 
     @Override
