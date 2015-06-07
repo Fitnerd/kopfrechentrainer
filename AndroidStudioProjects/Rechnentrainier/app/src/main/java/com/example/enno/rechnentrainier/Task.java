@@ -2,10 +2,10 @@ package com.example.enno.rechnentrainier;
 
 
 public class Task {
-    int operand1;
-    int operand2;
-    int operator;
-    int result;
+    private int operand1;
+    private int operand2;
+    private int operator;
+    private int result;
 
     public Task(int pOperand1, int pOperand2, int pOperator, int pResult ) {
        operand1 = pOperand1;
@@ -14,16 +14,16 @@ public class Task {
        result = pResult; 
     }
 
-    public getOperand1 {
+    public int getOperand1() {
         return operand1;
     }
-    public getOperand2 {
+    public int getOperand2() {
         return operand2;
     }
-    public getOperator {
+    public int getOperator() {
         return operator;
     }
-    public getResult {
+    public int getResult() {
         return result;
     }
 }

@@ -10,6 +10,8 @@ import android.widget.TextView;
 
 public class hardActivity extends ActionBarActivity {
 
+    Task task;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -18,19 +20,20 @@ public class hardActivity extends ActionBarActivity {
     }
 
     public void generateNums() {
+        task = new giveTask().makeTask(4,1,1000);
         TextView num1 = (TextView) findViewById(R.id.num1);
         TextView oper = (TextView) findViewById(R.id.operator);
         TextView num2 = (TextView) findViewById(R.id.num2);
-        num1.setText(Integer.toString(Task.getOperant1));
-        num2.setText(Integer.toString(Task.getOperant2));
-        oper.setText(Task.getOperator);
+        num1.setText(Integer.toString(task.getOperand1()));
+        num2.setText(Integer.toString(task.getOperand2()));
+        oper.setText(task.getOperator());
     }
 
     public void checkResult(View view) {
         TextView answer = (TextView) findViewById(R.id.anwser);
         TextView result = (TextView) findViewById(R.id.result);
         int result_num = Integer.parseInt(result.getText().toString());
-        if(result_num == Task.result) {
+        if(result_num == task.getResult()) {
             answer.setText("Your right!");
             generateNums();
         } else {

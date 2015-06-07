@@ -13,19 +13,19 @@ public class giveTask {
         int operand1 = r.nextInt(pCeiling - pFloor + 1) + pFloor;
         int operand2 = r.nextInt(pCeiling - pFloor + 1) + pFloor;
         int operator = r.nextInt(pComplexity);
-        int result;
+        int result = 0;
 
         switch(operator) {
-            case: 0
+            case 0:
                result = operand1 + operand2;
               break;
-            case: 1
+            case 1:
                 result = operand1 - operand2;
               break;
-            case: 2
+            case 2:
                 result = operand1 * operand2;
               break;
-            case: 3
+            case 3:
                 result = operand1 / operand2;
               break;
         }
